@@ -8,9 +8,9 @@ function getcomputerChoice() {
     let random = Math.floor(Math.random() * computerChoices.length);
 
     // assign computer choice to variable choice
-    const choice = computerChoices[random]
+    const choice = computerChoices[random];
 
-    return choice
+    return choice;
 }
 
 
