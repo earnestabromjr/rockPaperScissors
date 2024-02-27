@@ -1,14 +1,18 @@
 // function getcomputerChoice
-
-    // create string variable named choice with initial value of "" to hold computers choice 
-
+function getcomputerChoice() {
+    
     // create array named computerChoices to hold type string computer choices
+    const computerChoices = ["Rock", "Paper", "Scissors"];
 
     // Random pick element from computerChoices array
+    let random = Math.floor(Math.random() * computerChoices.length);
 
     // assign computer choice to variable choice
+    const choice = computerChoices[random]
 
-    // return choice
+    return choice
+}
+
 
 // function playerChoice
 
@@ -21,3 +25,4 @@
     // assign player choice to variable playerInput
 
     // return playerInput
+
