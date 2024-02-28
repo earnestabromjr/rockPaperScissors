@@ -13,7 +13,7 @@ function getcomputerChoice() {
     return choice;
 }
 
-function playerChoice(player) {
+function playerChoice() {
 
     // prompt user to enter their choice
     let playerInput = prompt("Please enter your choice: ");
@@ -23,10 +23,16 @@ function playerChoice(player) {
         alert("Please enter a valid choice");
         return playerInput;
     }
-
-    // assign player choice to variable playerInput
-
-    // return playerInput
+    
+    return playerInput;
 }
+
+function playRound(playerSelection, computerSelection) {
+    
+}
+
+const playerSelection = playerChoice();
+const computerSelection = getcomputerChoice();
+
 
 
