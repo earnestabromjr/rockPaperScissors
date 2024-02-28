@@ -5,7 +5,7 @@ function getcomputerChoice() {
     const computerChoices = ["Rock", "Paper", "Scissors"];
 
     // Random pick element from computerChoices array
-    let random = Math.floor(Math.random() * computerChoices.length);
+    const random = Math.floor(Math.random() * computerChoices.length);
 
     // assign computer choice to variable choice
     const choice = computerChoices[random];
@@ -13,16 +13,20 @@ function getcomputerChoice() {
     return choice;
 }
 
-
-// function playerChoice
-
-    // create string variable named playerInput with initial value of "" to hold players choice
+function playerChoice(player) {
 
     // prompt user to enter their choice
-
+    let playerInput = prompt("Please enter your choice: ");
+    playerInput = playerInput.toLowerCase();
     // use if statement to check if user entered a valid choice
+    while (playerInput !== "rock" && playerInput!== "paper" && playerInput!== "scissors") {
+        alert("Please enter a valid choice");
+        return playerInput;
+    }
 
     // assign player choice to variable playerInput
 
     // return playerInput
+}
+
 
