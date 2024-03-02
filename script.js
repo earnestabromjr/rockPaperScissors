@@ -30,22 +30,18 @@ function playerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  for (let i = 0; i < 5; i++) {
-    if (playerSelection === computerSelection) {
-      alert("It's a tie!");
-    } else if (playerSelection === "rock" && computerSelection === "scissors") {
-      alert("You won!");
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
-      alert("You won!");
-    } else if (
-      playerSelection === "scissors" &&
-      computerSelection === "paper"
-    ) {
-      alert("You won!");
-    } else {
-      alert("You lost!");
-    }
+  if (playerSelection === computerSelection) {
+    const result = "It's a tie!";
+  } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    const result = "You won!";
+  } else if (playerSelection === "paper" && computerSelection === "rock") {
+    const result = "You won!";
+  } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    const result = "You won!";
+  } else {
+    const result = "You lost!";
   }
+  return result;
 }
 
 const playerSelection = playerChoice();
