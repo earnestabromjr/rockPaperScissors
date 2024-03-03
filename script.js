@@ -1,7 +1,7 @@
 // function getcomputerChoice
 function getcomputerChoice() {
   // create array named computerChoices to hold type string computer choices
-  const computerChoices = ["Rock", "Paper", "Scissors"];
+  const computerChoices = ["rock", "paper", "scissors"];
 
   // Random pick element from computerChoices array
   const random = Math.floor(Math.random() * computerChoices.length);
@@ -23,31 +23,45 @@ function playerChoice() {
     playerInput !== "scissors"
   ) {
     alert("Please enter a valid choice");
-    return playerInput;
+    continue; // skip the rest of the code in the loop and move back to the beginning
   }
 
   return playerInput;
 }
-
 function playRound(playerSelection, computerSelection) {
+  let result = "";
   if (playerSelection === computerSelection) {
-    const result = "It's a tie!";
+    result = "It's a tie!";
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    const result = "You won!";
+    result = "You won!";
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    const result = "You won!";
+    result = "You won!";
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    const result = "You won!";
+    result = "You won!";
   } else {
-    const result = "You lost!";
+    result = "You lost!";
   }
   return result;
 }
 
-const playerSelection = playerChoice();
-const computerSelection = getcomputerChoice();
-let amountOfRounds = 5;
-for (let i = 0; i < amountOfRounds; i++) {
+// set number of rounds to play
+const rounds = 5;
+
+// keep track of the number of rounds played
+let round = 1;
+
+// prompt user to play again
+while (round <= rounds) {
+  // call playerChoice and getcomputerChoice functions
+  const playerSelection = playerChoice();
+  const computerSelection = getcomputerChoice();
   const result = playRound(playerSelection, computerSelection);
+
   console.log(result);
+
+  // increment the round counter
+  round++;
 }
+
+// prompt user to enter their choice again
+playerInput = playerChoice();
