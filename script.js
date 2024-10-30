@@ -44,24 +44,20 @@ function playRound(playerSelection, computerSelection) {
   return result;
 }
 
-// set number of rounds to play
-const rounds = 5;
+const container = document.querySelector(".container");
 
-// keep track of the number of rounds played
-let round = 1;
-
-// prompt user to play again
-while (round <= rounds) {
-  // call playerChoice and getcomputerChoice functions
-  const playerSelection = playerChoice();
-  const computerSelection = getcomputerChoice();
-  const result = playRound(playerSelection, computerSelection);
-
-  console.log(result);
-
-  // increment the round counter
-  round++;
-}
-
-// prompt user to enter their choice again
-playerInput = playerChoice();
+container.addEventListener("click", (e) => {
+  switch (e.target.id) {
+    case "rock":
+      console.log(playRound("rock", getcomputerChoice()));
+      break;
+    case "paper":
+      console.log(playRound("paper", getcomputerChoice()));
+      break;
+    case "scissors":
+      console.log(playRound("scissors", getcomputerChoice()));
+      break;
+    default:
+      break;
+  }
+});
