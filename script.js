@@ -61,3 +61,8 @@ container.addEventListener("click", (e) => {
       break;
   }
 });
+
+function displayResult(result) {
+  const resultDiv = document.querySelector("#result");
+  resultDiv.textContent = result;
+}
