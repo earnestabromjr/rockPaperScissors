@@ -66,3 +66,18 @@ function displayResult(result) {
   const resultDiv = document.querySelector("#result");
   resultDiv.textContent = result;
 }
+
+function displayScore(score) {
+  const scoreDiv = document.querySelector("#score");
+  scoreDiv.textContent = score;
+}
+
+let playerScore = 0;
+let computerScore = 0;
+for (let i = 0; i < 5; i++) {
+  const playerSelection = playerChoice();
+  const computerSelection = getcomputerChoice();
+  const result = playRound(playerSelection, computerSelection);
+  displayResult(result);
+  displayScore(playerScore, computerScore);
+}
