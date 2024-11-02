@@ -49,6 +49,7 @@ let resultDiv = document.querySelector("#result");
 resultDiv.textContent = "Results"
 
 container.addEventListener("click", (e) => {
+  // Refactor to a list to store results
   switch (e.target.id) {
     case "rock":
       resultDiv.textContent = playRound("rock", getcomputerChoice());
@@ -69,6 +70,7 @@ function displayResult(result) {
 }
 
 function displayScore(score) {
+  // Use a list to display score
   const scoreDiv = document.querySelector("#score");
   scoreDiv.textContent = score;
 }
