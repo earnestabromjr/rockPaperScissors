@@ -23,7 +23,6 @@ function playerChoice() {
     playerInput !== "scissors"
   ) {
     alert("Please enter a valid choice");
-    continue; // skip the rest of the code in the loop and move back to the beginning
   }
 
   return playerInput;
@@ -44,18 +43,21 @@ function playRound(playerSelection, computerSelection) {
   return result;
 }
 
-const container = document.querySelector(".container");
+const container = document.querySelector("#container");
+
+let resultDiv = document.querySelector("#result");
+resultDiv.textContent = "Results"
 
 container.addEventListener("click", (e) => {
   switch (e.target.id) {
     case "rock":
-      console.log(playRound("rock", getcomputerChoice()));
+      resultDiv.textContent = playRound("rock", getcomputerChoice());
       break;
     case "paper":
-      console.log(playRound("paper", getcomputerChoice()));
+      resultDiv.textContent = playRound("paper", getcomputerChoice());
       break;
     case "scissors":
-      console.log(playRound("scissors", getcomputerChoice()));
+      resultDiv.textContent = playRound("scissors", getcomputerChoice());
       break;
     default:
       break;
@@ -63,7 +65,6 @@ container.addEventListener("click", (e) => {
 });
 
 function displayResult(result) {
-  const resultDiv = document.querySelector("#result");
   resultDiv.textContent = result;
 }
 
