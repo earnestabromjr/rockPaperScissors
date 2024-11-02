@@ -7,9 +7,7 @@ function getcomputerChoice() {
   const random = Math.floor(Math.random() * computerChoices.length);
 
   // assign computer choice to variable choice
-  const choice = computerChoices[random];
-
-  return choice;
+  return computerChoices[random];
 }
 
 function playerChoice() {
@@ -48,8 +46,10 @@ const container = document.querySelector("#container");
 let resultDiv = document.querySelector("#result");
 resultDiv.textContent = "Results"
 
+const list = document.querySelector("#list");
+
 container.addEventListener("click", (e) => {
-  // Refactor to a list to store results
+  //TODO: Refactor to a list to store results
   switch (e.target.id) {
     case "rock":
       resultDiv.textContent = playRound("rock", getcomputerChoice());
@@ -70,7 +70,7 @@ function displayResult(result) {
 }
 
 function displayScore(score) {
-  // Use a list to display score
+  //TODO: Use a list to display score
   const scoreDiv = document.querySelector("#score");
   scoreDiv.textContent = score;
 }

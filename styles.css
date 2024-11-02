@@ -1,0 +1,60 @@
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the default font family */
+body {
+  font-family: sans-serif;
+}
+
+/* Remove list styles from lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+}
+
+/* Remove default button styles */
+button {
+  border: black dashed 1px;
+  border-radius: 7%;
+  background-color: transparent;
+}
+
+/* Custom styles */
+
+/* Add a background color to the body */
+body {
+  background-color: #f5f5f5;
+}
+
+/* Add a border to the header */
+header {
+  border-bottom: 1px solid #000;
+}
+
+/* Add a padding to the main content area */
+main {
+  padding: 1rem;
+}
+
+/* Add a background color to the footer */
+footer {
+  background-color: #000;
+  color: #fff;
+}
