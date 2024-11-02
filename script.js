@@ -43,31 +43,33 @@ function playRound(playerSelection, computerSelection) {
 
 const container = document.querySelector("#container");
 
-let resultDiv = document.querySelector("#result");
-resultDiv.textContent = "Results"
+const resultDiv = document.querySelector("#result");
 
 const list = document.querySelector("#list");
 
 container.addEventListener("click", (e) => {
-  //TODO: Refactor to a list to store results
+
+  const li = document.createElement("li");
+
+  // Store the result of playRound
+  let result;
+
   switch (e.target.id) {
     case "rock":
-      resultDiv.textContent = playRound("rock", getcomputerChoice());
+      result = playRound("rock", getcomputerChoice());
       break;
     case "paper":
-      resultDiv.textContent = playRound("paper", getcomputerChoice());
+      result = playRound("paper", getcomputerChoice());
       break;
     case "scissors":
-      resultDiv.textContent = playRound("scissors", getcomputerChoice());
+      result = playRound("scissors", getcomputerChoice());
       break;
     default:
-      break;
+      return;
   }
+  li.textContent = result;
+  list.appendChild(li);
 });
-
-function displayResult(result) {
-  resultDiv.textContent = result;
-}
 
 function displayScore(score) {
   //TODO: Use a list to display score
@@ -81,6 +83,5 @@ for (let i = 0; i < 5; i++) {
   const playerSelection = playerChoice();
   const computerSelection = getcomputerChoice();
   const result = playRound(playerSelection, computerSelection);
-  displayResult(result);
   displayScore(playerScore, computerScore);
 }
