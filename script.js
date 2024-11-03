@@ -22,7 +22,7 @@ function playRound(playerSelection, computerSelection) {
       (playerSelection === "scissors" && computerSelection === "paper")
   ) {
       playerScore++;
-      return "You won!";
+      return "You win!";
     }
   else {
     computerScore++;
@@ -31,7 +31,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function updateDisplay(playerSelection, computerSelection, result) {
-  document.getElementById(('player-choice').textContent = playerSelection;
+  document.getElementById('player-choice').textContent = playerSelection;
   document.getElementById('computer-choice').textContent = computerSelection;
   document.getElementById('result').textContent = result;
   document.getElementById('score').textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
