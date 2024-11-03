@@ -37,11 +37,8 @@ function updateDisplay(playerSelection, computerSelection, result) {
   document.getElementById('score').textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
 }
 
-function playGame(playerChoice) {
+function playGame(playerSelection) {
   const computerChoice = getComputerChoice();
   const result = playRound(playerSelection, computerChoice);
   updateDisplay(playerSelection, computerChoice, result);
 }
-
-let resultList = list.childNodes;
-resultList.forEach((item) => {console.log(item)})
